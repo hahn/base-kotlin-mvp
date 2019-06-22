@@ -17,7 +17,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "id.web.hn.basekotlinmvp"
+        applicationId "id.example.mvp"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
