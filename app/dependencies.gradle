@@ -1,0 +1,179 @@
+ext {
+    versions = [
+            support         : "28.0.0",
+            androidX        : "1.0.0",
+            androidX1       : "1.0.1",
+            androidX2       : "1.0.2",
+            constraint      : "1.1.3",
+            maps            : '16.0.0',
+            crash           : '16.2.1',
+            firebaseCore    : '16.0.4',
+            firebaseMsg     : '17.3.4',
+            okHttp          : "3.11.0",
+            retrofit        : '2.4.0',
+            dagger          : '2.17',
+            rxKotlin        : '2.3.0',
+            rxAndroid       : '2.1.0',
+            rxPermissions   : '0.10.2',
+            traceur         : '1.0.1',
+            stetho          : '1.5.0',
+            timber          : '4.7.1',
+            glide           : '4.9.0',
+            sherlock        : '1.0.4@aar',
+            multiDex        : '2.0.1',
+
+            junit           : '4.12',
+            mockito         : '2.23.4',
+            robolectric     : '4.1',
+            stethOkhttp     : '1.5.0',
+            mockitoKotlin   : '1.6.0',
+            espresso        : '3.1.0',
+            testRunner      : '1.1.0',
+
+            lottie          : "3.0.6",
+
+            room            : "2.1.0-alpha04",
+            discreteScrollview : "1.4.9",
+            svglib          : "1.0.0"
+
+    ]
+
+    supportDeps = [
+            material         : "com.google.android.material:material:1.0.0",
+            appcompatV7      : "androidx.appcompat:appcompat:$versions.androidX2",
+            cardView         : "androidx.cardview:cardview:$versions.androidX",
+            recyclerView     : "androidx.recyclerview:recyclerview:$versions.androidX",
+            supportAnnotation: "androidx.annotation:annotation:$versions.androidX",
+            supportV4        : "androidx.legacy:legacy-support-v4:$versions.androidX",
+            supportV13       : "androidx.legacy:legacy-support-v13:$versions.androidX",
+            gridLayout       : "androidx.gridlayout:gridlayout:$versions.androidX",
+            vectorDrawable   : "androidx.vectordrawable:vectordrawable:$versions.androidX1",
+            multiDex         : "androidx.multidex:multidex:$versions.multiDex",
+            constraintLayout : "androidx.constraintlayout:constraintlayout:$versions.constraint"
+    ]
+
+    rxJava = [
+            rxKotlin        : "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin",
+            rxAndroid       : "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+            traceur         : "com.tspoon.traceur:traceur:$versions.traceur",
+            rxRermissions   : "com.github.tbruyelle:rxpermissions:$versions.rxPermissions"
+    ]
+
+    retrofit = [
+            retrofit        : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            rxAdapter       : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+            gsonConverter   : "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    ]
+
+    gson = [
+            gson    : 'com.google.code.gson:gson:2.8.5'
+    ]
+
+    okHttp = [
+            logger  : "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
+            okhttp  : "com.squareup.okhttp3:okhttp:$versions.okHttp",
+            stetho  : "com.facebook.stetho:stetho-okhttp3:$versions.stetho"
+    ]
+
+    googlePlay = [
+            maps             : "com.google.android.gms:play-services-maps:$versions.maps",
+            crash            : "com.google.firebase:firebase-crash:$versions.crash",
+            firebaseCore     : "com.google.firebase:firebase-core:$versions.firebaseCore",
+            firebaseMsg      : "com.google.firebase:firebase-messaging:$versions.firebaseMsg"
+    ]
+    analytics = [
+            playServices    : 'com.google.android.gms:play-services-gcm:16.0.0',
+            fAnalytics      : "com.google.android.gms:play-services-analytics:16.0.4"
+    ]
+    onlyDebug = [
+            chuck   : "com.readystatesoftware.chuck:library:1.1.0"
+    ]
+
+    onlyRelease = [
+            chuckNoOp       : 'com.readystatesoftware.chuck:library-no-op:1.1.0',
+            sherlockNoOp    : 'com.github.ajitsing:sherlock-no-op:1.0.4@aar'
+    ]
+
+    //room library
+    room = [
+            roomRuntime     : "androidx.room:room-runtime:$versions.room",
+            roomRx          : "androidx.room:room-rxjava2:$versions.room"
+    ]
+
+    //test
+    mockito = [mockito: "org.mockito:mockito-core:$versions.mockito"]
+    junit = [junit: "junit:junit:$versions.junit"]
+
+    unitTest = [
+            robolectric         : "org.robolectric:robolectric:$versions.robolectric",
+            supportAnnotation   : "androidx.annotation:annotation:$versions.androidX",
+            kotlinTest          : "org.jetbrains.kotlin:kotlin-test:$kotlin_version",
+            kotlinJunit         : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version",
+
+    ] + junit + mockito
+
+    androidTests = [
+            mockitoAndroid      : "org.mockito:mockito-android:$versions.mockito",
+            espressoCore        : "androidx.test.espresso:espresso-core:$versions.espresso",
+            espressoContrib     : "androidx.test.espresso:espresso-contrib:$versions.espresso",
+            espressoIntents     : "androidx.test.espresso:espresso-intents:$versions.espresso",
+            espressoAcc         : "androidx.test.espresso:espresso-accessibility:$versions.espresso",
+            espressoIdle        : "androidx.test.espresso:espresso-idling-resource:$versions.espresso",
+            espressoConcurrent  : "androidx.test.espresso.idling:idling-concurrent:$versions.espresso",
+            espressoNetIdle     : "androidx.test.espresso.idling:idling-net:$versions.espresso",
+            testRunner          : "androidx.test:runner:$versions.testRunner",
+            testRules           : "androidx.test:rules:$versions.testRunner",
+            roomTest            : "androidx.room:room-testing:$versions.room"
+    ] + mockito
+
+    leakCannary = "com.squareup.leakcanary:leakcanary-android:1.5.1"
+    timber = "com.jakewharton.timber:timber:$versions.timber"
+    sherlock = "com.github.ajitsing:sherlock:$versions.sherlock"
+
+    daggers = [
+            'dagger'                : "com.google.dagger:dagger:$versions.dagger",
+            'daggerAndroid'         : "com.google.dagger:dagger-android:$versions.dagger",
+            'daggerAndroidSupport'  : "com.google.dagger:dagger-android-support:$versions.dagger"
+    ]
+
+//    dagger = "com.google.dagger:dagger:$versions.dagger"
+
+    daggerCompiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+    daggerProcessor = "com.google.dagger:dagger-android-processor:$versions.dagger"
+
+    glide = "com.github.bumptech.glide:glide:$versions.glide"
+    glideCompiler = "com.github.bumptech.glide:compiler:$versions.glide"
+    glideOkhttp = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
+    databindingCompiler = "androidx.databinding:databinding-compiler:3.4.1"
+
+    rippleEffect = 'com.balysv:material-ripple:1.0.2'
+
+    hawk = "com.orhanobut:hawk:2.0.1"
+    easyValidation = "com.wajahatkarim3.easyvalidation:easyvalidation-core:1.0.1"
+    lottie = "com.airbnb.android:lottie:$versions.lottie"
+    sweetDialog = "com.github.derohimat:sweet-alert-dialog:1.5.5"
+
+    dsc = "com.yarolegovich:discrete-scrollview:$versions.discreteScrollview"
+    svglib = "com.github.hahn:svgloaderlib:$versions.svglib"
+
+    roomCompiler = "androidx.room:room-compiler:$versions.room"
+
+    googlePlayLibs = googlePlay.values()
+    supportLibs = supportDeps.values()
+    networkLibs = retrofit.values() + okHttp.values() + gson.values()
+    rxJavaLibs = rxJava.values()
+    analyticsLibs = analytics.values()
+    roomLibs = room.values()
+    daggerLibs = daggers.values()
+
+    otherLibs = [timber, daggerLibs, glide, rippleEffect, hawk, easyValidation,
+                 lottie, sweetDialog, roomLibs, dsc, svglib]
+
+    debugLibs = onlyDebug.values() + leakCannary
+    releaseLibs = onlyRelease.values() + leakCannary
+    annotationProcessorLibs = [daggerCompiler, daggerProcessor, glideCompiler, databindingCompiler, roomCompiler]
+
+    unitTestLibs = unitTest.values() + leakCannary
+    androidTestsLibs = androidTests.values() + supportLibs
+
+}
