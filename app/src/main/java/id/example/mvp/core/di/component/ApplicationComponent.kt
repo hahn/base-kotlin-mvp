@@ -5,8 +5,13 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import id.example.mvp.App
+import id.example.mvp.core.data.DataManager
+import id.example.mvp.core.data.PreferencesHelper
+import id.example.mvp.core.data.remote.ServiceApi
+import id.example.mvp.core.di.module.ApiModule
 import id.example.mvp.core.di.module.ApplicationModule
 import id.example.mvp.core.di.module.FeatureModule
+import id.example.mvp.core.di.module.NetworkModule
 import javax.inject.Singleton
 
 /**
@@ -17,7 +22,9 @@ import javax.inject.Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
     FeatureModule::class,
-    ApplicationModule::class])
+    ApplicationModule::class,
+    NetworkModule::class,
+    ApiModule::class])
 interface ApplicationComponent {
 
     @Component.Builder
@@ -30,4 +37,11 @@ interface ApplicationComponent {
     }
 
     fun inject(application: App)
+
+
+    fun dataManager(): DataManager
+
+    fun serviceApi(): ServiceApi
+
+    fun preferencesHelper(): PreferencesHelper
 }
