@@ -3,14 +3,16 @@
           package="id.example.mvp">
 
     <application
-            android:name="id.example.mvp.App"
+            android:name=".App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="id.example.mvp.feature.main.MainActivity">
+        <activity android:name=".feature.github.GithubRepoListAct">
+        </activity>
+        <activity android:name=".feature.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
