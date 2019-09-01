@@ -4,10 +4,15 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log.d
+import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.android.AndroidInjection
 import id.example.mvp.R
 import id.example.mvp.core.data.model.Repos
+import id.example.mvp.core.ext.toast
 import id.example.mvp.feature.base.BaseMvpActivity
+import kotlinx.android.synthetic.main.activity_github_repo_list.*
+import timber.log.Timber
 import javax.inject.Inject
 
 class GithubRepoListAct : BaseMvpActivity(), GithubRepoListView {
@@ -49,6 +54,8 @@ class GithubRepoListAct : BaseMvpActivity(), GithubRepoListView {
         AndroidInjection.inject(this)
         attachView()
 
+        initToolbar(toolbar, "Repo list", true)
+
         user = intent.getStringExtra("user")
 
         if (!user.isNullOrBlank()) {
@@ -57,6 +64,13 @@ class GithubRepoListAct : BaseMvpActivity(), GithubRepoListView {
     }
 
     override fun showRepoList(repos: List<Repos>) {
+
+        val adapter = GithubRepoListAdapter(repos.toMutableList()) {
+            toast("user: ${it.name}")
+        }
+        rvRepos.layoutManager = LinearLayoutManager(this)
+        rvRepos.adapter = adapter
+        adapter.notifyDataSetChanged()
 
     }
 

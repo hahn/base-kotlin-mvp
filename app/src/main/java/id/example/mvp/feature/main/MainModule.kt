@@ -2,6 +2,7 @@ package id.example.mvp.feature.main
 
 import dagger.Module
 import dagger.Provides
+import id.example.mvp.core.data.DataManager
 import id.example.mvp.core.di.PerFeature
 
 /**
@@ -14,5 +15,5 @@ class MainModule {
 
     @PerFeature
     @Provides
-    fun providesMainPresenter(): MainPresenter = MainPresenter()
+    fun providesMainPresenter(dataManager: DataManager): MainPresenter = MainPresenter(dataManager)
 }
