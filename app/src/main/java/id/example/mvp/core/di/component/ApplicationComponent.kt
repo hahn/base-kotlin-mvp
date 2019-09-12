@@ -4,6 +4,7 @@ import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
+import dagger.android.support.AndroidSupportInjectionModule
 import id.example.mvp.App
 import id.example.mvp.core.data.DataManager
 import id.example.mvp.core.data.PreferencesHelper
@@ -21,6 +22,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
+    AndroidSupportInjectionModule::class,
     FeatureModule::class,
     ApplicationModule::class,
     NetworkModule::class,
