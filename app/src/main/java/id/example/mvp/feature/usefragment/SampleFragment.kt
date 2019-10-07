@@ -2,13 +2,8 @@ package id.example.mvp.feature.usefragment
 
 
 import android.content.Context
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import dagger.android.support.AndroidSupportInjection
-
 import id.example.mvp.R
 import id.example.mvp.feature.base.BaseMvpFragment
 
