@@ -30,10 +30,7 @@ ext {
             espresso        : '3.1.0',
             testRunner      : '1.1.0',
 
-            lottie          : "3.0.6",
-
             room            : "2.1.0-alpha04",
-            discreteScrollview : "1.4.9",
             svglib          : "1.0.0"
 
     ]
@@ -149,10 +146,8 @@ ext {
 
     hawk = "com.orhanobut:hawk:2.0.1"
     easyValidation = "com.wajahatkarim3.easyvalidation:easyvalidation-core:1.0.1"
-    lottie = "com.airbnb.android:lottie:$versions.lottie"
     sweetDialog = "com.github.derohimat:sweet-alert-dialog:1.5.5"
 
-    dsc = "com.yarolegovich:discrete-scrollview:$versions.discreteScrollview"
     svglib = "com.github.hahn:svgloaderlib:$versions.svglib"
 
     roomCompiler = "androidx.room:room-compiler:$versions.room"
@@ -166,7 +161,7 @@ ext {
     daggerLibs = daggers.values()
 
     otherLibs = [timber, daggerLibs, glide, rippleEffect, hawk, easyValidation,
-                 lottie, sweetDialog, roomLibs, dsc, svglib]
+                 sweetDialog, roomLibs, svglib]
 
     debugLibs = onlyDebug.values() + leakCannary
     releaseLibs = onlyRelease.values() + leakCannary
