@@ -1,27 +1,26 @@
 package id.example.mvp
 
-import android.app.Activity
 import android.content.Context
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
 import com.facebook.stetho.Stetho
 import com.orhanobut.hawk.Hawk
 import com.squareup.leakcanary.LeakCanary
-import timber.log.Timber
-import javax.inject.Inject
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
+import dagger.android.HasAndroidInjector
 import id.example.mvp.core.di.component.DaggerApplicationComponent
+import timber.log.Timber
+import javax.inject.Inject
 
 /**
  * Created by hahn on 21.06.19.
  * Project: BaseKotlinMvp
  */
-class App : MultiDexApplication(), HasActivityInjector {
+class App : MultiDexApplication(), HasAndroidInjector {
 
     @Inject
-    lateinit var activityInjector: DispatchingAndroidInjector<Activity>
+    lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate() {
         super.onCreate()
@@ -45,7 +44,7 @@ class App : MultiDexApplication(), HasActivityInjector {
 
     }
 
-    override fun activityInjector(): AndroidInjector<Activity> = activityInjector
+    override fun androidInjector(): AndroidInjector<Any> = androidInjector
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
