@@ -26,9 +26,8 @@ class App : MultiDexApplication(), HasAndroidInjector {
         super.onCreate()
 
         DaggerApplicationComponent
-            .builder()
-            .application(this)
-            .build()
+            .factory()
+            .create(this)
             .inject(this)
 
         Hawk.init(this).build()

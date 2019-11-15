@@ -1,6 +1,6 @@
 package id.example.mvp.core.di.component
 
-import android.app.Application
+import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -29,13 +29,10 @@ import javax.inject.Singleton
     ApiModule::class])
 interface ApplicationComponent {
 
-    @Component.Builder
-    interface Builder {
+    @Component.Factory
+    interface Factory {
+        fun create(@BindsInstance context: Context): ApplicationComponent
 
-        @BindsInstance
-        fun application(application: Application): Builder
-
-        fun build(): ApplicationComponent
     }
 
     fun inject(application: App)
