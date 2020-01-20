@@ -10,8 +10,8 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import id.example.mvp.core.di.component.DaggerApplicationComponent
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
 
 /**
  * Created by hahn on 21.06.19.
@@ -38,10 +38,8 @@ class App : MultiDexApplication(), HasAndroidInjector {
             Stetho.initializeWithDefaults(this)
             LeakCanary.install(this)
         } else {
-            //init fabric etc
+            // init fabric etc
         }
-
-
     }
 
     override fun androidInjector(): AndroidInjector<Any> = androidInjector
@@ -50,6 +48,4 @@ class App : MultiDexApplication(), HasAndroidInjector {
         super.attachBaseContext(base)
         MultiDex.install(this)
     }
-
-
 }

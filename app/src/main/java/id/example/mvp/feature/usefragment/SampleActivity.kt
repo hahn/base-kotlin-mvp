@@ -14,13 +14,10 @@ class SampleActivity : BaseMvpActivity(), HasAndroidInjector {
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
-
     override fun attachView() {
-
     }
 
     override fun detachView() {
-
     }
 
     override fun layoutId(): Int = R.layout.activity_sample

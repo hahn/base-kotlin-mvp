@@ -40,7 +40,6 @@ interface ApplicationComponent {
 
     fun inject(application: App)
 
-
     fun dataManager(): DataManager
 
     fun serviceApi(): ServiceApi

@@ -30,5 +30,4 @@ abstract class BaseMvpFragment : BaseFragment(), MvpView {
     override fun showToast(message: String) {
         context?.toast(message)
     }
-
 }

@@ -11,5 +11,5 @@ interface BaseRecyclerItemClickListener
 
 interface OnRecyclerItemClickListener<D> : BaseRecyclerItemClickListener {
 
-    fun onItemClicked(item:D, position:Int,view: View)
+    fun onItemClicked(item: D, position: Int, view: View)
 }

@@ -30,7 +30,6 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutId())
-
     }
 
     @LayoutRes
@@ -55,7 +54,6 @@ abstract class BaseActivity : AppCompatActivity() {
             true -> Tools().setSystemBarColor(this, android.R.color.transparent)
             else -> Tools().setSystemBarColor(this, R.color.grey_20)
         }
-
     }
 
     fun initToolbar(toolbar: Toolbar, title: String) {
@@ -86,5 +84,4 @@ abstract class BaseActivity : AppCompatActivity() {
             else -> return super.onOptionsItemSelected(item)
         }
     }
-
 }

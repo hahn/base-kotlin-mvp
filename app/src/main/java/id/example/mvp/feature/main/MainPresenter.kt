@@ -10,7 +10,8 @@ import javax.inject.Inject
  * Project: BaseKotlinMvp
  */
 class MainPresenter @Inject constructor(
-    private val dataManager: DataManager) : BasePresenter<MainView>() {
+    private val dataManager: DataManager
+) : BasePresenter<MainView>() {
 
     fun onLoadUser() {
 

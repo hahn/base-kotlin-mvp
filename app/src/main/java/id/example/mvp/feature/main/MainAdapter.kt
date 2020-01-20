@@ -8,7 +8,7 @@ import id.example.mvp.R
 import id.example.mvp.core.data.model.GithubUser
 import kotlinx.android.synthetic.main.item_user_list.view.*
 
-class MainAdapter: RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     var items: MutableList<GithubUser> = ArrayList()
     var listener: ((GithubUser) -> Unit)? = null
@@ -26,7 +26,7 @@ class MainAdapter: RecyclerView.Adapter<MainAdapter.ViewHolder>() {
         listener?.let { holder.bind(items[position], it) }
     }
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: GithubUser, listener: (GithubUser) -> Unit) = with(itemView) {
             txtName.text = item.login
             txtUrl.text = item.url

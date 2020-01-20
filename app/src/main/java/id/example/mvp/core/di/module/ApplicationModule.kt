@@ -19,5 +19,4 @@ class ApplicationModule {
 //    internal fun provideContext(): Context {
 //        return mApplication.applicationContext
 //    }
-
 }

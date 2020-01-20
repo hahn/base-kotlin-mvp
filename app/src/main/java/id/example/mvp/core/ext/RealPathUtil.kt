@@ -11,7 +11,6 @@ import android.provider.MediaStore
 import android.text.TextUtils
 import androidx.loader.content.CursorLoader
 import timber.log.Timber
-import id.example.mvp.core.ext.RealPathUtil
 
 /**
  * Created by hahn on 21.06.19.
@@ -34,7 +33,6 @@ object RealPathUtil {
         }
         return realPath
     }
-
 
     private fun getRealPathFromUriAPI11to18(context: Context, contentUri: Uri): String? {
         val proj = arrayOf(MediaStore.Images.Media.DATA)
@@ -73,7 +71,7 @@ object RealPathUtil {
      * other file-based ContentProviders.
      *
      * @param context The context.
-     * @param uri     The Uri to query.
+     * @param uri The Uri to query.
      * @author paulburke
      */
     private fun getRealPathFromUriAPI19(context: Context, uri: Uri): String? {
@@ -101,7 +99,7 @@ object RealPathUtil {
                 val id = DocumentsContract.getDocumentId(uri)
                 if (!TextUtils.isEmpty(id)) {
                     if (id.startsWith("raw:")) {
-                        return id.replaceFirst("raw:", "");
+                        return id.replaceFirst("raw:", "")
                     }
                     return try {
                         val contentUri = ContentUris.withAppendedId(
@@ -131,7 +129,7 @@ object RealPathUtil {
                 val selectionArgs = arrayOf(split[1])
 
                 return getDataColumn(context, contentUri, selection, selectionArgs)
-            }// MediaProvider
+            } // MediaProvider
             // DownloadsProvider
         } else if ("content".equals(uri.scheme, ignoreCase = true)) {
 
@@ -142,10 +140,9 @@ object RealPathUtil {
                 null,
                 null
             )
-
         } else if ("file".equals(uri.scheme, ignoreCase = true)) {
             return uri.path
-        }// File
+        } // File
         // MediaStore (and general)
 
         return null
@@ -155,14 +152,18 @@ object RealPathUtil {
      * Get the value of the data column for this Uri. This is useful for
      * MediaStore Uris, and other file-based ContentProviders.
      *
-     * @param context       The context.
-     * @param uri           The Uri to query.
-     * @param selection     (Optional) Filter used in the query.
+     * @param context The context.
+     * @param uri The Uri to query.
+     * @param selection (Optional) Filter used in the query.
      * @param selectionArgs (Optional) Selection arguments used in the query.
      * @return The value of the _data column, which is typically a file path.
      */
-    private fun getDataColumn(context: Context, uri: Uri?, selection: String?,
-                              selectionArgs: Array<String>?): String? {
+    private fun getDataColumn(
+        context: Context,
+        uri: Uri?,
+        selection: String?,
+        selectionArgs: Array<String>?
+    ): String? {
 
         var cursor: Cursor? = null
         val column = "_data"
@@ -180,7 +181,6 @@ object RealPathUtil {
         }
         return null
     }
-
 
     /**
      * @param uri The Uri to check.
@@ -213,5 +213,4 @@ object RealPathUtil {
     private fun isGooglePhotosUri(uri: Uri): Boolean {
         return "com.google.android.apps.photos.content" == uri.authority
     }
-
 }

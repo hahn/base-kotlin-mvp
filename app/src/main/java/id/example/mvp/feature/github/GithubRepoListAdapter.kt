@@ -8,8 +8,8 @@ import id.example.mvp.R
 import id.example.mvp.core.data.model.Repos
 import kotlinx.android.synthetic.main.item_repo_list.view.*
 
-class GithubRepoListAdapter(val items: MutableList<Repos>, val listener: (Repos) -> Unit)
-    : RecyclerView.Adapter<GithubRepoListAdapter.ViewHolder>() {
+class GithubRepoListAdapter(val items: MutableList<Repos>, val listener: (Repos) -> Unit) :
+    RecyclerView.Adapter<GithubRepoListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context)
@@ -23,13 +23,12 @@ class GithubRepoListAdapter(val items: MutableList<Repos>, val listener: (Repos)
         holder.bind(items[position], listener)
     }
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: Repos, listener: (Repos) -> Unit) = with(itemView) {
             txtName.text = item.name
             txtDescription.text = item.description
 
             setOnClickListener { listener(item) }
         }
-
     }
 }

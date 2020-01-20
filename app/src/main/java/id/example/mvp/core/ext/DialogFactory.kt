@@ -36,8 +36,14 @@ object DialogFactory {
         return pDialog
     }
 
-    fun createWarningDialog(context: Context, title: String, content: String, confirmText: String, cancelText: String,
-                            confirmListener: SweetAlertDialog.OnSweetClickListener): SweetAlertDialog {
+    fun createWarningDialog(
+        context: Context,
+        title: String,
+        content: String,
+        confirmText: String,
+        cancelText: String,
+        confirmListener: SweetAlertDialog.OnSweetClickListener
+    ): SweetAlertDialog {
         return SweetAlertDialog(context, SweetAlertDialog.NORMAL_TYPE)
             .setTitleText(title)
             .setContentText(content)
@@ -46,8 +52,13 @@ object DialogFactory {
             .setCancelText(cancelText)
     }
 
-    fun createWarningDialog(context: Context, title: String, content: String, confirmText: String,
-                            confirmListener: SweetAlertDialog.OnSweetClickListener): SweetAlertDialog {
+    fun createWarningDialog(
+        context: Context,
+        title: String,
+        content: String,
+        confirmText: String,
+        confirmListener: SweetAlertDialog.OnSweetClickListener
+    ): SweetAlertDialog {
         return SweetAlertDialog(context, SweetAlertDialog.NORMAL_TYPE)
             .setTitleText(title)
             .setContentText(content)

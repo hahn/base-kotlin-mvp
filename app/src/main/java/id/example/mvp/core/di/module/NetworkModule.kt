@@ -7,15 +7,14 @@ import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import id.example.mvp.BuildConfig.BASE_URL
+import java.util.concurrent.TimeUnit.SECONDS
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import timber.log.Timber
-import java.util.concurrent.TimeUnit.SECONDS
-import javax.inject.Singleton
-
 
 /**
  * Created by hahn on 25.07.19.
@@ -76,5 +75,4 @@ class NetworkModule {
         .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
         .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         .create()
-
 }

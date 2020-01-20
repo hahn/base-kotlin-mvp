@@ -9,8 +9,8 @@ import id.example.mvp.R
 import id.example.mvp.core.data.model.GithubUser
 import id.example.mvp.feature.base.BaseMvpActivity
 import id.example.mvp.feature.github.GithubRepoListAct
-import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseMvpActivity(), MainView {
 
@@ -24,7 +24,6 @@ class MainActivity : BaseMvpActivity(), MainView {
             context.startActivity(
                 Intent(context, MainActivity::class.java)
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-
         }
     }
 
@@ -38,7 +37,7 @@ class MainActivity : BaseMvpActivity(), MainView {
         presenter.detachView()
     }
 
-    override fun layoutId(): Int= R.layout.activity_main
+    override fun layoutId(): Int = R.layout.activity_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,11 +47,9 @@ class MainActivity : BaseMvpActivity(), MainView {
     }
 
     override fun showLoading() {
-
     }
 
     override fun hideLoading() {
-
     }
 
     override fun showUserList(users: List<GithubUser>) {
@@ -70,6 +67,5 @@ class MainActivity : BaseMvpActivity(), MainView {
     }
 
     override fun showUserEmpty() {
-
     }
 }

@@ -24,5 +24,4 @@ interface ServiceApi {
     fun getReposList(
         @Path("user") user: String
     ): Single<List<Repos>>
-
 }

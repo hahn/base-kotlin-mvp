@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
  * Project: BaseKotlinMvp
  */
 
-abstract class BaseViewHolder<D,L : BaseRecyclerItemClickListener>(view: View) : RecyclerView.ViewHolder(view) {
+abstract class BaseViewHolder<D, L : BaseRecyclerItemClickListener>(view: View) : RecyclerView.ViewHolder(view) {
 
-    abstract fun onBind(item:D, listener:L?)
+    abstract fun onBind(item: D, listener: L?)
 }

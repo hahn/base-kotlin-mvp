@@ -9,7 +9,7 @@ import id.example.mvp.core.ext.toast
  * Project: BaseKotlinMvp
  */
 
-abstract class BaseMvpActivity: BaseActivity(), MvpView {
+abstract class BaseMvpActivity : BaseActivity(), MvpView {
 
     private var progressDialog: SweetAlertDialog? = null
 

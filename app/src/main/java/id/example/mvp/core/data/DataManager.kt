@@ -14,8 +14,10 @@ import javax.inject.Singleton
 
 @Singleton
 class DataManager @Inject
-constructor(private val api: ServiceApi,
-            private val preferencesHelper: PreferencesHelper){
+constructor(
+    private val api: ServiceApi,
+    private val preferencesHelper: PreferencesHelper
+) {
 
     fun getUsersList(): Single<List<GithubUser>> {
         return api.getUsersList()

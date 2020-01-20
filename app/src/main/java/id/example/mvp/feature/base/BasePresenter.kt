@@ -33,5 +33,4 @@ open class BasePresenter<T : MvpView> : Presenter<T> {
     }
 
     private class MvpViewNotAttachedException internal constructor() : RuntimeException("Please call Presenter.attachView(MvpView) before requesting baseData to the Presenter")
-
 }

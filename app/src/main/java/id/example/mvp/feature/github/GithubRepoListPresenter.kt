@@ -10,8 +10,10 @@ import javax.inject.Inject
  * Created by hahn on 26.07.19.
  * Project: BaseKotlinMvp
  */
-class GithubRepoListPresenter @Inject constructor(private val dataManager: DataManager,
-                                                  private val preferencesHelper: PreferencesHelper): BasePresenter<GithubRepoListView>() {
+class GithubRepoListPresenter @Inject constructor(
+    private val dataManager: DataManager,
+    private val preferencesHelper: PreferencesHelper
+) : BasePresenter<GithubRepoListView>() {
 
     fun onGetRepoList(user: String) {
 
@@ -29,5 +31,4 @@ class GithubRepoListPresenter @Inject constructor(private val dataManager: DataM
                 })
         )
     }
-
 }

@@ -7,7 +7,7 @@ import id.example.mvp.feature.base.MvpView
  * Created by hahn on 21.06.19.
  * Project: BaseKotlinMvp
  */
-interface MainView: MvpView {
+interface MainView : MvpView {
 
     fun showLoading()
     fun hideLoading()

@@ -23,6 +23,4 @@ import id.example.mvp.core.di.ActivityContext
     internal fun providesContext(): Context {
         return mActivity
     }
-
-
 }

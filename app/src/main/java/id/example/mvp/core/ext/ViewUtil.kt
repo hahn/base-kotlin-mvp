@@ -26,5 +26,4 @@ object ViewUtil {
         val imm = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(activity.window.decorView.windowToken, 0)
     }
-
 }

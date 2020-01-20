@@ -107,7 +107,6 @@ class Tools {
                 .into(img)
         } catch (e: Exception) {
         }
-
     }
 
     fun displayImageRound(ctx: Context, img: ImageView, @DrawableRes drawable: Int) {
@@ -122,7 +121,6 @@ class Tools {
             //            });
         } catch (e: Exception) {
         }
-
     }
 
     fun displayImageOriginal(ctx: Context, img: ImageView, url: String) {
@@ -133,7 +131,6 @@ class Tools {
                 .into(img)
         } catch (e: Exception) {
         }
-
     }
 
     fun displayImageCircle(ctx: Context, img: ImageView, url: String) {
@@ -143,7 +140,6 @@ class Tools {
                 .into(img)
         } catch (e: Exception) {
         }
-
     }
 
     fun getFormattedDateSimple(dateTime: Long?): String {
@@ -257,7 +253,6 @@ class Tools {
             drawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
         } catch (e: Exception) {
         }
-
     }
 
     fun getScreenWidth(): Int {
@@ -301,7 +296,6 @@ class Tools {
         return builder.toString()
     }
 
-
     fun rateAction(activity: Activity) {
         val uri = Uri.parse("market://details?id=" + activity.packageName)
         val goToMarket = Intent(Intent.ACTION_VIEW, uri)
@@ -310,7 +304,6 @@ class Tools {
         } catch (e: ActivityNotFoundException) {
             activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + activity.packageName)))
         }
-
     }
 
     fun fromHtml(html: String): Spanned {

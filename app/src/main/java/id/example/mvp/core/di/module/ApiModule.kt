@@ -3,8 +3,8 @@ package id.example.mvp.core.di.module
 import dagger.Module
 import dagger.Provides
 import id.example.mvp.core.data.remote.ServiceApi
-import retrofit2.Retrofit
 import javax.inject.Singleton
+import retrofit2.Retrofit
 
 /**
  * Created by hahn on 21.06.19.

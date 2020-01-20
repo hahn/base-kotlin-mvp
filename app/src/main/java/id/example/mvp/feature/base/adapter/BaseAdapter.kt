@@ -19,7 +19,6 @@ abstract class BaseAdapter<D, L : BaseRecyclerItemClickListener, VH : BaseViewHo
             notifyDataSetChanged()
         }
 
-
     override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: VH, position: Int) {
@@ -36,7 +35,6 @@ abstract class BaseAdapter<D, L : BaseRecyclerItemClickListener, VH : BaseViewHo
             items.removeAt(indexOf)
             notifyItemRemoved(indexOf)
         }
-
     }
 
     /**

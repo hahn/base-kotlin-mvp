@@ -17,7 +17,7 @@ import id.web.hn.svgloaderlib.SvgLoader
  * Project: BaseKotlinMvp
  */
 
-fun Context.toast(message: String){
+fun Context.toast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
@@ -44,7 +44,6 @@ fun ImageView.loadImageFromSvg(url: String) {
     SvgLoader.pluck()
         .with(context as Activity?)
         .load(url, this)
-
 }
 
 fun Activity.hideKeyboard() {
